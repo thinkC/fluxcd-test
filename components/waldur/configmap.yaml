@@ -31,15 +31,6 @@ data:
         source: letsEncrypt
 
 
-    # apiHostname: waldur.camrc.xyz
-    # apiScheme: http
-    # homeportHostname:  waldur.camrc.xyz
-    # homeportScheme: http
-    # ingress:
-    #   tls:
-    #     enabled: false
-    #     # source: letsEncrypt
-
     ### Example config for Keycloak integration
 
     # waldur:
