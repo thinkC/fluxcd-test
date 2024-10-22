@@ -22,7 +22,7 @@ spec:
     targetPath: waldur.socialAuthMethods[0].client_secret
   - kind: Secret
     name: waldur-keycloak-config
-    valuesKey: discoveryUrl1
+    valuesKey: discoveryUrl
     targetPath: waldur.socialAuthMethods[0].discoveryUrl
 
   install:
