@@ -34,7 +34,7 @@ spec:
       retries: 3
   driftDetection:
     mode: enabled
-  interval: 5m
+  interval: 2m
   # Waldur DB migrations during install/upgrade
   # can take a while so increase install timeout
   timeout: 60m
