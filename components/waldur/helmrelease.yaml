@@ -1,47 +1,3 @@
-# ---
-# apiVersion: helm.toolkit.fluxcd.io/v2
-# kind: HelmRelease
-# metadata:
-#   name: waldur
-#   namespace: waldur
-# spec:
-#   chartRef:
-#     kind: HelmChart
-#     name: waldur
-#   releaseName: waldur
-#   valuesFrom:
-#   - kind: ConfigMap
-#     name: waldur-config
-#   - kind: Secret
-#     name: waldur-keycloak-config
-#     valuesKey: client_id
-#     targetPath: waldur.socialAuthMethods[0].client_id
-#   - kind: Secret
-#     name: waldur-keycloak-config
-#     valuesKey: client_secret
-#     targetPath: waldur.socialAuthMethods[0].client_secret
-#   - kind: Secret
-#     name: waldur-keycloak-config
-#     valuesKey: discoveryUrl
-#     targetPath: waldur.socialAuthMethods[0].discoveryUrl
-
-#   install:
-#     createNamespace: true
-#     remediation:
-#       retries: 3
-#   upgrade:
-#     remediation:
-#       retries: 3
-#   driftDetection:
-#     mode: enabled
-#   interval: 5m
-#   # Waldur DB migrations during install/upgrade
-#   # can take a while so increase install timeout
-#   timeout: 60m
-
-
-
-
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
@@ -58,16 +14,16 @@ spec:
     name: waldur-config
   - kind: Secret
     name: waldur-keycloak-config
-    valuesKey: keycloakClientId
-    targetPath: waldur.socialAuthMethods[0].clientId
+    valuesKey: client_id
+    targetPath: waldur.socialAuthMethods.client_id
   - kind: Secret
     name: waldur-keycloak-config
-    valuesKey: keycloakClientSecret
-    targetPath: waldur.socialAuthMethods[0].clientSecret
+    valuesKey: client_secret
+    targetPath: waldur.socialAuthMethods.client_secret
   - kind: Secret
     name: waldur-keycloak-config
-    valuesKey: keycloakDiscoveryUrl
-    targetPath: waldur.socialAuthMethods[0].discoveryUrl
+    valuesKey: discoveryUrl
+    targetPath: waldur.socialAuthMethods.discoveryUrl
 
   install:
     createNamespace: true
@@ -82,3 +38,47 @@ spec:
   # Waldur DB migrations during install/upgrade
   # can take a while so increase install timeout
   timeout: 60m
+
+
+
+
+# ---
+# apiVersion: helm.toolkit.fluxcd.io/v2
+# kind: HelmRelease
+# metadata:
+#   name: waldur
+#   namespace: waldur
+# spec:
+#   chartRef:
+#     kind: HelmChart
+#     name: waldur
+#   releaseName: waldur
+#   valuesFrom:
+#   - kind: ConfigMap
+#     name: waldur-config
+#   - kind: Secret
+#     name: waldur-keycloak-config
+#     valuesKey: keycloakClientId
+#     targetPath: waldur.socialAuthMethods[0].clientId
+#   - kind: Secret
+#     name: waldur-keycloak-config
+#     valuesKey: keycloakClientSecret
+#     targetPath: waldur.socialAuthMethods[0].clientSecret
+#   - kind: Secret
+#     name: waldur-keycloak-config
+#     valuesKey: keycloakDiscoveryUrl
+#     targetPath: waldur.socialAuthMethods[0].discoveryUrl
+
+#   install:
+#     createNamespace: true
+#     remediation:
+#       retries: 3
+#   upgrade:
+#     remediation:
+#       retries: 3
+#   driftDetection:
+#     mode: enabled
+#   interval: 5m
+#   # Waldur DB migrations during install/upgrade
+#   # can take a while so increase install timeout
+#   timeout: 60m
