@@ -15,11 +15,11 @@ spec:
   - kind: Secret
     name: waldur-keycloak-config
     valuesKey: client_id
-    targetPath: waldur.socialAuthMethods.client_id
+    targetPath: waldur.socialAuthMethods.clientId
   - kind: Secret
     name: waldur-keycloak-config
     valuesKey: client_secret
-    targetPath: waldur.socialAuthMethods.client_secret
+    targetPath: waldur.socialAuthMethods.clientSecret
   - kind: Secret
     name: waldur-keycloak-config
     valuesKey: discoveryUrl
