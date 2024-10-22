@@ -18,7 +18,7 @@ spec:
     targetPath: waldur.socialAuthMethods[0].clientId
   - kind: Secret
     name: waldur-keycloak-config
-    valuesKey: client_secret
+    valuesKey: client_secret1
     targetPath: waldur.socialAuthMethods[0].clientSecret
   - kind: Secret
     name: waldur-keycloak-config
