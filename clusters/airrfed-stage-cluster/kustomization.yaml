@@ -7,7 +7,7 @@ resources:
   - credentials-sealed.yaml
 
   # for waldur
-  - ../../components/waldur
+  # - ../../components/waldur
 
 # Patch the Helm release for the cluster to update the release name
 #   This ensures we get nicely named resources in OpenStack
