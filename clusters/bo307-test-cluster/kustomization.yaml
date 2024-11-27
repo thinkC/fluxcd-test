@@ -19,7 +19,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/releaseName
-        value: bo307-test-cluster
+        value: bo307-test-cluster01
 
       - op: add
         path: /spec/valuesFrom/-
